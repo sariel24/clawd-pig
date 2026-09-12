@@ -1,0 +1,36 @@
+# 依赖与构建产物（体积大、可由 npm 还原）
+node_modules/
+dist/
+github-build-output/
+
+# 打包/安装缓存
+.npm-cache/
+.builder-cache/
+
+# 本地备份（仅旧代码副本，不属于仓库内容）
+backup-before-sprite-integration/
+backup-before-icon-eating-v1/
+backup-before-packaging/
+
+# 日志与调试输出
+*.log
+build-debug.log
+test-report.txt
+
+# 测试临时目录
+.test-desktop/
+.test-userdata/
+
+# 机密与凭据（绝不能提交）
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+secrets.json
+secrets.*.json
+credentials.json
+
+# 本地个人数据（不上传）
+微信图片_*.jpg

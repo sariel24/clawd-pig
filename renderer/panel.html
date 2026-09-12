@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; img-src data:;">
+  <title>小猪 Clawd · 图标仓库与种植</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header>
+    <h1>🐷 小猪 Clawd · 图标仓库</h1>
+    <div id="mode" class="badge">读取中…</div>
+  </header>
+
+  <section class="card">
+    <div class="row"><span class="k">桌面目录</span><span id="deskPath" class="v">—</span></div>
+    <div class="row"><span class="k">仓库目录</span><span id="bellyPath" class="v">—</span></div>
+    <div class="row">
+      <label class="chk">
+        <input id="scanOnly" type="checkbox">
+        <span>真实移动（取消勾选即回到“只扫描”安全模式）</span>
+      </label>
+    </div>
+    <div class="row note">开启前会二次确认：只移动桌面上的 .lnk / .url 快捷方式，绝不删除，随时可一键恢复。</div>
+    <div class="btns">
+      <button id="btnScan">扫描桌面候选</button>
+      <button id="btnRefresh">刷新仓库</button>
+      <button id="btnRestoreAll" class="danger">立即恢复全部</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>桌面候选（仅 .lnk / .url）</h2>
+    <div id="candidates" class="list">点“扫描桌面候选”开始</div>
+  </section>
+
+  <section class="card">
+    <h2>小猪肚子里的种子（可种植恢复）</h2>
+    <div id="seeds" class="list">暂无</div>
+  </section>
+
+  <script src="panel.js"></script>
+</body>
+</html>

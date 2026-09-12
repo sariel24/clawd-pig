@@ -1,0 +1,55 @@
+:root {
+  color-scheme: dark;
+  --bg: #1f2430;
+  --card: #272d3b;
+  --line: #39415a;
+  --text: #e8ecf6;
+  --dim: #9aa6c4;
+  --accent: #7cc4ff;
+  --danger: #ff7a7a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.6 "Microsoft YaHei", "PingFang SC", sans-serif;
+  padding: 14px;
+}
+header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+h1 { font-size: 16px; margin: 0 0 10px; }
+h2 { font-size: 13px; margin: 0 0 8px; color: var(--dim); }
+.badge {
+  background: #2f3a55; color: var(--accent);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 2px 10px; font-size: 12px; white-space: nowrap;
+}
+.badge.warn { color: #ffd479; }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 10px 12px; margin-bottom: 12px;
+}
+.row { display: flex; gap: 8px; margin: 4px 0; align-items: baseline; }
+.k { color: var(--dim); min-width: 64px; }
+.v { word-break: break-all; }
+.note { color: var(--dim); font-size: 12px; }
+.chk { display: flex; gap: 6px; align-items: center; color: var(--dim); }
+.btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+button {
+  background: #33405e; color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 6px 12px; cursor: pointer; font-size: 13px;
+}
+button:hover { background: #3d4d73; }
+button.danger { background: #5a2f3a; border-color: #7a3d4b; color: #ffd7dd; }
+button.danger:hover { background: #6c3947; }
+button.mini { padding: 3px 9px; font-size: 12px; }
+.list { max-height: 190px; overflow: auto; border-top: 1px dashed var(--line); padding-top: 6px; }
+.item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 2px; border-bottom: 1px solid #2e3549;
+}
+.item img { width: 22px; height: 22px; image-rendering: pixelated; }
+.item .nm { flex: 1; word-break: break-all; }
+.item .st { color: var(--dim); font-size: 12px; }
+.empty { color: var(--dim); }

@@ -1,0 +1,10 @@
+小猪 Clawd 动作素材包 v1
+
+clawd-pig-core-v1.png：待机、走路、开心挥动和四种表情。
+clawd-pig-actions-v1.png：种花、浇水、画画和刷手机。
+sprites-manifest.json：精灵图的行列和动作顺序，交给 Harness 读取。
+
+两张 PNG 都是 4 列 × 4 行。每行代表一个动作，每行从左到右播放四帧。
+使用 Canvas 时必须设置 imageSmoothingEnabled=false，并保持透明窗口。
+
+注意：接入前先备份当前能正常运行的项目。Harness 只能读取并播放这些图片，禁止重新绘制小猪。

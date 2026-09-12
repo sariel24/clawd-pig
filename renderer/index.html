@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!-- 严格 CSP：无内联脚本/样式，图片只允许 data:/blob: -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; img-src data: blob:;">
+  <title>小猪 Clawd</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <div id="bubble" hidden></div>
+  <div id="fatal" hidden></div>
+  <div id="debug" hidden></div>
+  <script src="renderer.js"></script>
+</body>
+</html>

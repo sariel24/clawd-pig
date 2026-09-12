@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "character": "小猪 Clawd",
+  "sheets": {
+    "core": {
+      "file": "clawd-pig-core-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "rowOrder": [
+        "idle",
+        "walking",
+        "happy_wave",
+        "expressions"
+      ],
+      "expressionFrames": [
+        "happy",
+        "shy",
+        "sad",
+        "surprised"
+      ]
+    },
+    "actions": {
+      "file": "clawd-pig-actions-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "rowOrder": [
+        "planting",
+        "watering",
+        "painting",
+        "watching_phone"
+      ]
+    }
+  },
+  "rendering": {
+    "transparent": true,
+    "imageSmoothingEnabled": false,
+    "frameRule": "frameWidth=image.width/4; frameHeight=image.height/4",
+    "recommendedFrameRate": 6
+  }
+}

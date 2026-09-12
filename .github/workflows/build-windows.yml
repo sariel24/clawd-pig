@@ -1,0 +1,47 @@
+name: Build Windows Installers
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-windows.yml'
+
+jobs:
+  build:
+    name: electron-builder (NSIS + portable, x64)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Verify package files
+        shell: pwsh
+        run: |
+          node -e "const p=require('./package.json'); console.log('name=',p.name,'version=',p.version,'main=',p.main); const b=p.build||{}; console.log('targets=',JSON.stringify((b.win&&b.win.target)||null));"
+          if (-not (Test-Path package-lock.json)) { throw 'package-lock.json 缺失，无法 npm ci' }
+
+      - name: Install dependencies (npm ci)
+        run: npm ci
+
+      - name: Build Windows x64 (NSIS + portable)
+        run: npx electron-builder --win --x64 --publish never
+
+      - name: List build output
+        shell: pwsh
+        run: Get-ChildItem dist -Recurse -File | Select-Object FullName, Length
+
+      - name: Upload installers
+        uses: actions/upload-artifact@v4
+        with:
+          name: clawd-pig-windows-x64
+          path: dist/*.exe
+          if-no-files-found: error
+          retention-days: 30

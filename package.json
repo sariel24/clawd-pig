@@ -1,0 +1,70 @@
+{
+  "name": "clawd-pig-desktop-pet",
+  "productName": "小猪桌宠",
+  "version": "1.0.0",
+  "description": "小猪桌宠：透明无边框置顶桌面宠物，可拖动、自主移动、点击反应、动作/表情、吃图标与种植恢复。",
+  "main": "main.js",
+  "private": true,
+  "license": "MIT",
+  "author": "Clawd Pig",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64",
+    "dist:nsis": "electron-builder --win nsis --x64",
+    "dist:portable": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "^44.2.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.clawdpig.desktop",
+    "productName": "小猪桌宠",
+    "copyright": "Copyright © 2026 小猪桌宠",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*",
+      "clawd-pig.png",
+      "ChatGPT Image*.png",
+      "小猪Clawd-*.png",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "小猪桌宠",
+      "artifactName": "小猪桌宠-Setup-${version}-x64.${ext}",
+      "uninstallDisplayName": "小猪桌宠 ${version}"
+    },
+    "portable": {
+      "artifactName": "小猪桌宠-Portable-${version}-x64.${ext}"
+    },
+    "publish": null
+  }
+}
